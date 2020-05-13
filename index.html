@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MetacognitionStudy</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .lds-spinner {
+                color: official;
+                display: none;
+                position: relative;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+            }
+
+            .lds-spinner div {
+                transform-origin: 40px 40px;
+                animation: lds-spinner 1.2s linear infinite;
+            }
+
+            .lds-spinner div:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 18px;
+                border-radius: 20%;
+                background: black;
+            }
+
+            .lds-spinner div:nth-child(1) {
+                transform: rotate(0deg);
+                animation-delay: -1.1s;
+            }
+
+            .lds-spinner div:nth-child(2) {
+                transform: rotate(30deg);
+                animation-delay: -1s;
+            }
+
+            .lds-spinner div:nth-child(3) {
+                transform: rotate(60deg);
+                animation-delay: -0.9s;
+            }
+
+            .lds-spinner div:nth-child(4) {
+                transform: rotate(90deg);
+                animation-delay: -0.8s;
+            }
+
+            .lds-spinner div:nth-child(5) {
+                transform: rotate(120deg);
+                animation-delay: -0.7s;
+            }
+
+            .lds-spinner div:nth-child(6) {
+                transform: rotate(150deg);
+                animation-delay: -0.6s;
+            }
+
+            .lds-spinner div:nth-child(7) {
+                transform: rotate(180deg);
+                animation-delay: -0.5s;
+            }
+
+            .lds-spinner div:nth-child(8) {
+                transform: rotate(210deg);
+                animation-delay: -0.4s;
+            }
+
+            .lds-spinner div:nth-child(9) {
+                transform: rotate(240deg);
+                animation-delay: -0.3s;
+            }
+
+            .lds-spinner div:nth-child(10) {
+                transform: rotate(270deg);
+                animation-delay: -0.2s;
+            }
+
+            .lds-spinner div:nth-child(11) {
+                transform: rotate(300deg);
+                animation-delay: -0.1s;
+            }
+
+            .lds-spinner div:nth-child(12) {
+                transform: rotate(330deg);
+                animation-delay: 0s;
+            }
+
+            @keyframes lds-spinner {
+                0% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <ul class="nav nav-pills">
+            <li><a target='_blank'
+                    href="https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.co.uk/%3Fgws_rd%3Dssl"
+                    class="colorfix"><button class="btn" role="button">Sign in</button></a></li>
+            <!-- <li>
+                <a target='_blank' title="Google apps" class="firstsbuttons"
+                    href="https://www.google.co.uk/intl/en/options/"><img class="quad"
+                        src="http://www.englewoodschools.net/cms/lib8/CO01900647/Centricity/Domain/1009/GoogleAppsIcon.png"
+                        height="22" width="22"></a>
+            </li> -->
+            <li><a target='_blank' class="firstsbuttons"
+                    href="https://www.google.co.uk/imghp?hl=en&tab=wi&ei=7sfqVtCHG6TgyQOjo7d4&ved=0EKouCBUoAQ">Images</a>
+            </li>
+            <li><a target='_blank' class="firstsbuttons" href="https://mail.google.com/mail/?tab=wm">Gmail</a></li>
+        </ul>
+        <form id="form" class="page">
+
+            <img class="logo" src="https://www.google.it/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+            <br><input id="search" class="search" title="Search" type="text"><br>
+            <div class="Bcontainer">
+                <div class="button left">Google Search</div>
+                <div class="button right">I'm Feeling Lucky</div>
+            </div>
+        </form>
+        <footer class="nav nav-tabs">
+            <ul class="bottomone rightone">
+                <li><a target="blank" href="https://www.google.co.uk/preferences?hl=en">Settings</a></li>
+                <li><a target="blank" href="https://www.google.co.uk/intl/en/policies/terms/?fg=1">Terms</a></li>
+                <li><a target="blank" href="https://www.google.co.uk/intl/en/policies/privacy/?fg=1">Privacy</a></li>
+
+            </ul>
+            <ul class="leftone bottomone">
+                <li><a target="blank" href="https://www.google.co.uk/intl/en/about.html?fg=1">About</a></li>
+                <li><a target="blank" href="https://www.google.co.uk/services/?fg=1">Business</a></li>
+                <li><a target="blank" href="https://www.google.co.uk/intl/en/ads/?fg=1">Advertising</a></li>
+            </ul>
+        </footer>
+
+        <div class="lds-spinner" id="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </body>
+    <script>
+        document.addEventListener(
+            'DOMContentLoaded',
+            function () {
+                document.getElementById('form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var searchText = document.getElementById('search').value;
+
+                    var params = searchText.split(' ');
+                    if (params.includes('cloudy') || params.includes('night') || params.includes('warmer')) {
+                        document.getElementById('spinner').style.display = 'inline-block';
+                        setTimeout(() => window.location.href = '/result.html?search=' + params.join('+'), 10000)
+                    } else {
+                        window.location.href = '/result.html?search=' + params.join('+')
+                    }
+                });
+            },
+            false
+        );
+
+    </script>
+
+</html>
