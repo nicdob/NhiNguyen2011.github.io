@@ -130,7 +130,7 @@
             <img class="logo" src="https://www.google.it/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
             <br><input id="search" class="search" title="Search" type="text"><br>
             <div class="Bcontainer">
-                <div class="button left">Google Search</div>
+                <div class="button left" id="btn-search">Google Search</div>
                 <div class="button right">I'm Feeling Lucky</div>
             </div>
         </form>
@@ -165,21 +165,28 @@
 
     </body>
     <script>
+        function search(e) {
+            e.preventDefault();
+            var searchText = document.getElementById('search').value;
+
+            var params = searchText.split(' ');
+            if (params.includes('cloudy') || params.includes('night') || params.includes('warmer')) {
+                document.getElementById('spinner').style.display = 'inline-block';
+                setTimeout(() => window.location.href = '/result.html?search=' + params.join('+'), 10000)
+            } else {
+                window.location.href = '/result.html?search=' + params.join('+')
+            }
+        }
         document.addEventListener(
             'DOMContentLoaded',
             function () {
                 document.getElementById('form').addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    var searchText = document.getElementById('search').value;
-
-                    var params = searchText.split(' ');
-                    if (params.includes('cloudy') || params.includes('night') || params.includes('warmer')) {
-                        document.getElementById('spinner').style.display = 'inline-block';
-                        setTimeout(() => window.location.href = '/result.html?search=' + params.join('+'), 10000)
-                    } else {
-                        window.location.href = '/result.html?search=' + params.join('+')
-                    }
+                    search(e);
                 });
+
+                document.getElementById('btn-search').addEventListener('click', function (e) {
+                    search(e);
+                })
             },
             false
         );
