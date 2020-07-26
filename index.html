@@ -2,253 +2,346 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MetacognitionStudy</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      .lds-spinner {
-        color: official;
-        display: none;
-        position: relative;
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-      }
-
-      .lds-spinner div {
-        transform-origin: 40px 40px;
-        animation: lds-spinner 1.2s linear infinite;
-      }
-
-      .lds-spinner div:after {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 6px;
-        height: 18px;
-        border-radius: 20%;
-        background: black;
-      }
-
-      .lds-spinner div:nth-child(1) {
-        transform: rotate(0deg);
-        animation-delay: -1.1s;
-      }
-
-      .lds-spinner div:nth-child(2) {
-        transform: rotate(30deg);
-        animation-delay: -1s;
-      }
-
-      .lds-spinner div:nth-child(3) {
-        transform: rotate(60deg);
-        animation-delay: -0.9s;
-      }
-
-      .lds-spinner div:nth-child(4) {
-        transform: rotate(90deg);
-        animation-delay: -0.8s;
-      }
-
-      .lds-spinner div:nth-child(5) {
-        transform: rotate(120deg);
-        animation-delay: -0.7s;
-      }
-
-      .lds-spinner div:nth-child(6) {
-        transform: rotate(150deg);
-        animation-delay: -0.6s;
-      }
-
-      .lds-spinner div:nth-child(7) {
-        transform: rotate(180deg);
-        animation-delay: -0.5s;
-      }
-
-      .lds-spinner div:nth-child(8) {
-        transform: rotate(210deg);
-        animation-delay: -0.4s;
-      }
-
-      .lds-spinner div:nth-child(9) {
-        transform: rotate(240deg);
-        animation-delay: -0.3s;
-      }
-
-      .lds-spinner div:nth-child(10) {
-        transform: rotate(270deg);
-        animation-delay: -0.2s;
-      }
-
-      .lds-spinner div:nth-child(11) {
-        transform: rotate(300deg);
-        animation-delay: -0.1s;
-      }
-
-      .lds-spinner div:nth-child(12) {
-        transform: rotate(330deg);
-        animation-delay: 0s;
-      }
-
-      @keyframes lds-spinner {
-        0% {
-          opacity: 1;
-        }
-
-        100% {
-          opacity: 0;
-        }
-      }
-    </style>
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
-
   <body>
-    <ul class="nav nav-pills">
-      <li>
-        <a
-          target="_blank"
-          href="https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.co.uk/%3Fgws_rd%3Dssl"
-          class="colorfix"
-          ><button class="btn" role="button">Sign in</button></a
-        >
-      </li>
-      <!-- <li>
-                <a target='_blank' title="Google apps" class="firstsbuttons"
-                    href="https://www.google.co.uk/intl/en/options/"><img class="quad"
-                        src="http://www.englewoodschools.net/cms/lib8/CO01900647/Centricity/Domain/1009/GoogleAppsIcon.png"
-                        height="22" width="22"></a>
-            </li> -->
-      <li>
-        <a
-          target="_blank"
-          class="firstsbuttons"
-          href="https://www.google.co.uk/imghp?hl=en&tab=wi&ei=7sfqVtCHG6TgyQOjo7d4&ved=0EKouCBUoAQ"
-          >Images</a
-        >
-      </li>
-      <li>
-        <a
-          target="_blank"
-          class="firstsbuttons"
-          href="https://mail.google.com/mail/?tab=wm"
-          >Gmail</a
-        >
-      </li>
-    </ul>
-    <form id="form" class="page">
-      <img
-        class="logo"
-        src="https://www.google.it/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-      />
-      <br /><input
-        id="search"
-        class="search"
-        title="Search"
-        type="text"
-      /><br />
-      <div class="Bcontainer">
-        <div class="button left" id="btn-search">Google Search</div>
-        <div class="button right">I'm Feeling Lucky</div>
-      </div>
-    </form>
-    <footer class="nav nav-tabs">
-      <ul class="bottomone rightone">
-        <li>
-          <a target="blank" href="https://www.google.co.uk/preferences?hl=en"
-            >Settings</a
-          >
-        </li>
-        <li>
-          <a
-            target="blank"
-            href="https://www.google.co.uk/intl/en/policies/terms/?fg=1"
-            >Terms</a
-          >
-        </li>
-        <li>
-          <a
-            target="blank"
-            href="https://www.google.co.uk/intl/en/policies/privacy/?fg=1"
-            >Privacy</a
-          >
-        </li>
-      </ul>
-      <ul class="leftone bottomone">
-        <li>
-          <a
-            target="blank"
-            href="https://www.google.co.uk/intl/en/about.html?fg=1"
-            >About</a
-          >
-        </li>
-        <li>
-          <a target="blank" href="https://www.google.co.uk/services/?fg=1"
-            >Business</a
-          >
-        </li>
-        <li>
-          <a target="blank" href="https://www.google.co.uk/intl/en/ads/?fg=1"
-            >Advertising</a
-          >
-        </li>
-      </ul>
-    </footer>
+    <div class="main">
+      <!-- Home Page -->
 
-    <div class="lds-spinner" id="spinner">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="home">
+        <div class="container">
+          <div class="row">
+            <div class="eight columns offset-by-two">
+              <h1 class="headline">TU Darmstadt Search</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns offset-by-two">
+              <form action="" class="wiki-search-form" autocomplete="off">
+                <input
+                  autocomplete="false"
+                  name="hidden"
+                  type="text"
+                  style="display:none;"
+                />
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  class="wiki-search-input"
+                  id="wiki-search-input"
+                />
+                <button class="button btn btn-wiki">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Page -->
+
+      <div class="result hidden">
+        <header class="header">
+          <div class="container">
+            <div class="row">
+              <div class="two-thirds column">
+                <form
+                  action=""
+                  autocomplete="off"
+                  class="result-wiki-search-form"
+                >
+                  <input
+                    autocomplete="false"
+                    name="hidden"
+                    type="text"
+                    style="display:none;"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search Wikipedia..."
+                    class="result-wiki-search-form-input"
+                    id="result-wiki-search-form-input"
+                  />
+                  <button class="btn result-btn-wiki">Search</button>
+                </form>
+              </div>
+              <div class="one-third column">
+                <h1>TU Darmstadt Search</h1>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="container">
+          <section class="search-results">
+            <div class="one-half column">
+              <div class="display-results"></div>
+            </div>
+          </section>
+        </div>
+        <!-- Container -->
+      </div>
+      <!-- Results -->
     </div>
   </body>
+
   <script>
-    function search(e) {
-      e.preventDefault();
-      var searchText = document.getElementById("search").value;
+    window.onload = function() {
+      document.getElementById("wiki-search-input").focus();
+    };
 
-      var params = searchText.split(" ");
-      //   if (
-      //     params.includes("cloudy") ||
-      //     params.includes("night") ||
-      //     params.includes("warmer")
-      //   ) {
-      //     document.getElementById("spinner").style.display = "inline-block";
-      //     setTimeout(() => window.location.href = '/result.html?search=' + params.join('+'), 10000)
-      //   } else {
-      //     window.location.href = "/result.html?search=" + params.join("+");
-      //   }
-      window.location.href = "/result.html?search=" + params.join("+");
-    }
-    document.addEventListener(
-      "DOMContentLoaded",
-      function() {
-        document.getElementById("form").addEventListener("submit", function(e) {
-          search(e);
-        });
-
-        document
-          .getElementById("btn-search")
-          .addEventListener("click", function(e) {
-            search(e);
-          });
+    var QA = [
+      {
+        keywords: ["cloudy", "nights", "warmer"],
+        fullQuestion: "Why are cloudy nights warmer?",
+        relevantAnswers: [
+          {
+            title: "T1 Why cloudy nights are often warmer than clear nights?",
+            link:
+              "https://www.wthitv.com/content/news/Why-cloudy-nights-are-often-warmer-than-clear-nights-506024501.html",
+            description:
+              "That's why you might notice that cloudy nights are warmer than clear nights...."
+          },
+          {
+            title: "T2 Why is a cloudy night warmer than a clear night?",
+            link:
+              "https://www.quora.com/Why-is-a-cloudy-night-warmer-than-a-clear-night",
+            description:
+              "A cloudy night is warmer than a clear night, due to..."
+          },
+          {
+            title: "T3 Are cloudy nights warmer than nights without clouds?",
+            link:
+              "https://earthscience.stackexchange.com/questions/4226/are-cloudy-nights-warmer-than-nights-without-clouds",
+            description:
+              "there a correlation between temperature and cloud, during the night..."
+          },
+          {
+            title: "T4 Why are cloudy nights generally warmer than clear ones?",
+            link:
+              "https://study.com/academy/answer/why-are-cloudy-nights-generally-warmer-than-clear-ones.html",
+            description:
+              "The reason of the cloudy night is warmer as compare to the clear is..."
+          },
+          {
+            title: "T5 Effects of Cloud Cover: on forecasted temperatures",
+            link:
+              "http://ww2010.atmos.uiuc.edu/(Gh)/wwhlpr/fcst_temps_cloud_cover.rxml",
+            description:
+              "If skies are clear, more heat reaches the earth's surface..."
+          }
+        ],
+        irrelevantAnswers: [
+          {
+            title: "F1 Why is a cloudy night warmer than a clear night?",
+            link:
+              "https://www.npr.org/2018/09/14/647944033/september-is-peak-hurricane-season-why-is-that?t=1589142487307",
+            description:
+              "September 10 is the day you are statistically most likely to find a tropical cyclone somewhere in the Atlantic basin..."
+          },
+          {
+            title: "F2 Reasons for Cloudy Nights Are Warmer ",
+            link: "https://www.weatherwizkids.com/weather-tornado.htm",
+            description:
+              "A cloudy night is warmer than a clear night, due to the fact that the sun heats up the land during the day time..."
+          },
+          {
+            title: "F3 Why are cloudy nights warmer?",
+            link:
+              "https://scied.ucar.edu/learning-zone/storms/how-tornadoes-form",
+            description:
+              "Is there a correlation between temperature and cloud, during the night?"
+          },
+          {
+            title: "F4 Reasons for Cloudy Nights Are Warmer",
+            link:
+              "https://www.loveexploring.com/gallerylist/67035/the-strangest-weather-phenomena-in-the-world-and-where-to-see-them",
+            description:
+              "I have noticed this winter that nights without clouds (especially when the 12h before the night where not cloudy)..."
+          },
+          {
+            title: "F5 Why are cloudy nights warmer?",
+            link:
+              "https://blazepress.com/2015/01/18-insane-unusual-weather-phenomenas-actually-real/",
+            description:
+              "Is it due to a greenhouse effect from water vapor, inhibition of convection..."
+          }
+        ]
       },
-      false
-    );
+      {
+        keywords: [
+          "Atlantic",
+          "hurricane",
+          "hurricanes",
+          "August",
+          "September"
+        ],
+        fullQuestion:
+          "Why are there more Atlantic hurricanes in August and September?",
+        relevantAnswers: [
+          {
+            title: "T1 Atlantic hurricane season",
+            link:
+              "https://www.npr.org/2018/09/14/647944033/september-is-peak-hurricane-season-why-is-that?t=1589142487307",
+            description:
+              "September 10 is the day you are statistically most likely to find a tropical cyclone somewhere in the Atlantic basin..."
+          },
+          {
+            title: "T2 Why September is Atlantic Hurricane Season",
+            link:
+              "https://www.thoughtco.com/september-heart-of-hurricane-season-4079924",
+            description:
+              "The Atlantic hurricane season begins on June 1, but an equally important date to mark on your calendar is September 1..."
+          },
+          {
+            title: "T3 September Is Peak Hurricane Season. Why Is That?",
+            link:
+              "https://weather.com/storms/hurricane/news/atlantic-hurricane-season-ramp-up-august",
+            description:
+              "There is a 17-day stretch from mid-August to early September during which the most intense U.S. hurricane landfalls all occurred... "
+          },
+          {
+            title: "T4 The peak of the hurricane season",
+            link:
+              "https://www.accuweather.com/en/weather-news/august-hurricane-analysis-where-atlantic-storms-form-and-which-us-states-are-most-vulnerable/346100",
+            description:
+              "Peak hurricane season in the Atlantic Basin unfolds in mid-August and lasts through October...."
+          }
+        ],
+        irrelevantAnswers: [
+          {
+            title: "F1 Facts and Statistics: Hurricanes",
+            link:
+              "https://www.iii.org/fact-statistic/facts-statistics-hurricanes",
+            description: "The 2020 Atlantic hurricane season activity is ...."
+          },
+          {
+            title: "F2 How Often Hurricanes Make Landfall in Florida",
+            link:
+              "https://www.tripsavvy.com/how-often-do-hurricanes-hit-florida-3266726",
+            description:
+              "A hurricane is a tropical storm that develops over water...."
+          },
+          {
+            title: "F3 Busy Atlantic hurricane season predicted for 2020",
+            link:
+              "https://www.noaa.gov/media-release/busy-atlantic-hurricane-season-predicted-for-2020",
+            description:
+              "An above-normal 2020 Atlantic hurricane season is expected...."
+          },
+          {
+            title: "F4 2020 Atlantic Hurricane Season Fast Facts",
+            link:
+              "https://edition.cnn.com/2020/05/11/us/2020-atlantic-hurricane-season-fast-facts/index.html",
+            description:
+              "The 2020 Atlantic hurricane season runs from June 1 to November 30...."
+          }
+        ]
+      }
+    ];
+
+    function ajax(keyword) {
+      //AJAX request
+      var containKeyword = false;
+      for (var i = 0; i < QA.length; i++) {
+        containKeyword = QA[i].keywords.some(currentKeyword =>
+          keyword.toLowerCase().includes(currentKeyword)
+        );
+        if (containKeyword) {
+          var relevantAnswers = QA[i].relevantAnswers.sort(
+            () => Math.random() - 0.5
+          );
+          var irrelevantAnswers = QA[i].irrelevantAnswers.sort(
+            () => Math.random() - 0.5
+          );
+
+          showResults(relevantAnswers.concat(irrelevantAnswers));
+          break;
+        }
+      }
+      if (!containKeyword) {
+        showError(keyword);
+      }
+    }
+
+    function showResults(response) {
+      for (var i = 0; i <= response.length; i++) {
+        $(".display-results").append(
+          "<div class='result-list result-" +
+            i +
+            "'>" +
+            "<span class='result-title title-" +
+            i +
+            "'></span>" +
+            "<br>" +
+            "<span class='result-snippet snippet-" +
+            i +
+            "'></span>" +
+            "<br>" +
+            "<span class='result-metadata metadata-" +
+            i +
+            "'></span>" +
+            "</div>"
+        );
+      }
+
+      for (var m = 0; m <= response.length; m++) {
+        var title = response[m].title;
+
+        $(".title-" + m).html(
+          "<a href='" +
+            response[m].link +
+            "' target='_blank'>" +
+            response[m].title +
+            "</a>"
+        );
+        $(".snippet-" + m).html(response[m].description);
+        $(".metadata-" + m).html(
+          "<a href='" +
+            response[m].link +
+            "' target='_blank'>" +
+            response[m].link +
+            "</a>"
+        );
+      }
+    }
+
+    function showError(keyword) {
+      $(".display-results").append(
+        "<div class='error'> <p>Your search <span class='keyword'>" +
+          keyword +
+          "</span> did not match any documents.</p> <p>Suggestions:</p><li>Make sure that all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></div> "
+      );
+    }
+
+    $(".result-btn-wiki").click(function(event) {
+      event.preventDefault();
+      $(".display-results").html("");
+      var keyword = $(".result-wiki-search-form-input").val();
+      document.getElementById("result-wiki-search-form-input").blur();
+      ajax(keyword);
+    });
+
+    $(".btn-wiki").click(function(event) {
+      event.preventDefault();
+      var keyword = $(".wiki-search-input").val();
+
+      if (keyword !== "") {
+        $(".result-wiki-search-form-input").val(keyword);
+        $(".home").addClass("hidden");
+        $(".result").removeClass("hidden");
+        document.getElementById("wiki-search-input").blur();
+        $(".wiki-search-input").val("");
+        document.getElementById("result-wiki-search-form-input").blur();
+        $(".display-results").html("");
+        ajax(keyword);
+      } else {
+        alert("Enter a keyword into the search box");
+      }
+    });
   </script>
 </html>
