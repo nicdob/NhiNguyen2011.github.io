@@ -1,196 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <!-- Home Page -->
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MetacognitionStudy</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-        <style>
-            .lds-spinner {
-                color: official;
-                display: none;
-                position: relative;
-                width: 80px;
-                height: 80px;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-            }
-
-            .lds-spinner div {
-                transform-origin: 40px 40px;
-                animation: lds-spinner 1.2s linear infinite;
-            }
-
-            .lds-spinner div:after {
-                content: " ";
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 6px;
-                height: 18px;
-                border-radius: 20%;
-                background: black;
-            }
-
-            .lds-spinner div:nth-child(1) {
-                transform: rotate(0deg);
-                animation-delay: -1.1s;
-            }
-
-            .lds-spinner div:nth-child(2) {
-                transform: rotate(30deg);
-                animation-delay: -1s;
-            }
-
-            .lds-spinner div:nth-child(3) {
-                transform: rotate(60deg);
-                animation-delay: -0.9s;
-            }
-
-            .lds-spinner div:nth-child(4) {
-                transform: rotate(90deg);
-                animation-delay: -0.8s;
-            }
-
-            .lds-spinner div:nth-child(5) {
-                transform: rotate(120deg);
-                animation-delay: -0.7s;
-            }
-
-            .lds-spinner div:nth-child(6) {
-                transform: rotate(150deg);
-                animation-delay: -0.6s;
-            }
-
-            .lds-spinner div:nth-child(7) {
-                transform: rotate(180deg);
-                animation-delay: -0.5s;
-            }
-
-            .lds-spinner div:nth-child(8) {
-                transform: rotate(210deg);
-                animation-delay: -0.4s;
-            }
-
-            .lds-spinner div:nth-child(9) {
-                transform: rotate(240deg);
-                animation-delay: -0.3s;
-            }
-
-            .lds-spinner div:nth-child(10) {
-                transform: rotate(270deg);
-                animation-delay: -0.2s;
-            }
-
-            .lds-spinner div:nth-child(11) {
-                transform: rotate(300deg);
-                animation-delay: -0.1s;
-            }
-
-            .lds-spinner div:nth-child(12) {
-                transform: rotate(330deg);
-                animation-delay: 0s;
-            }
-
-            @keyframes lds-spinner {
-                0% {
-                    opacity: 1;
-                }
-
-                100% {
-                    opacity: 0;
-                }
-            }
-
-        </style>
-    </head>
-
-    <body>
-        <ul class="nav nav-pills">
-            <li><a target='_blank'
-                    href="https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.co.uk/%3Fgws_rd%3Dssl"
-                    class="colorfix"><button class="btn" role="button">Sign in</button></a></li>
-            <!-- <li>
-                <a target='_blank' title="Google apps" class="firstsbuttons"
-                    href="https://www.google.co.uk/intl/en/options/"><img class="quad"
-                        src="http://www.englewoodschools.net/cms/lib8/CO01900647/Centricity/Domain/1009/GoogleAppsIcon.png"
-                        height="22" width="22"></a>
-            </li> -->
-            <li><a target='_blank' class="firstsbuttons"
-                    href="https://www.google.co.uk/imghp?hl=en&tab=wi&ei=7sfqVtCHG6TgyQOjo7d4&ved=0EKouCBUoAQ">Images</a>
-            </li>
-            <li><a target='_blank' class="firstsbuttons" href="https://mail.google.com/mail/?tab=wm">Gmail</a></li>
-        </ul>
-        <form id="form" class="page">
-
-            <img class="logo" src="https://www.google.it/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-            <br><input id="search" class="search" title="Search" type="text"><br>
-            <div class="Bcontainer">
-                <div class="button left" id="btn-search">Google Search</div>
-                <div class="button right">I'm Feeling Lucky</div>
+      <div class="home">
+        <div class="container">
+          <div class="row">
+            <div class="eight columns offset-by-two">
+              <h1 class="headline">TU Darmstadt Search</h1>
             </div>
-        </form>
-        <footer class="nav nav-tabs">
-            <ul class="bottomone rightone">
-                <li><a target="blank" href="https://www.google.co.uk/preferences?hl=en">Settings</a></li>
-                <li><a target="blank" href="https://www.google.co.uk/intl/en/policies/terms/?fg=1">Terms</a></li>
-                <li><a target="blank" href="https://www.google.co.uk/intl/en/policies/privacy/?fg=1">Privacy</a></li>
+          </div>
 
-            </ul>
-            <ul class="leftone bottomone">
-                <li><a target="blank" href="https://www.google.co.uk/intl/en/about.html?fg=1">About</a></li>
-                <li><a target="blank" href="https://www.google.co.uk/services/?fg=1">Business</a></li>
-                <li><a target="blank" href="https://www.google.co.uk/intl/en/ads/?fg=1">Advertising</a></li>
-            </ul>
-        </footer>
-
-        <div class="lds-spinner" id="spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <div class="row">
+            <div class="eight columns offset-by-two">
+              <form action="" class="wiki-search-form" autocomplete="off">
+                <input autocomplete="false" type="text" style="display:none;" />
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  class="wiki-search-input"
+                  id="wiki-search-input"
+                />
+                <button class="button btn btn-wiki">Search</button>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
 
-    </body>
-    <script>
-        function search(e) {
-            e.preventDefault();
-            var searchText = document.getElementById('search').value;
+      <!-- Results Page -->
 
-            var params = searchText.split(' ');
-            if (params.includes('cloudy') || params.includes('night') || params.includes('warmer')) {
-                document.getElementById('spinner').style.display = 'inline-block';
-                setTimeout(() => window.location.href = '/result.html?search=' + params.join('+'), 10000)
-            } else {
-                window.location.href = '/result.html?search=' + params.join('+')
-            }
-        }
-        document.addEventListener(
-            'DOMContentLoaded',
-            function () {
-                document.getElementById('form').addEventListener('submit', function (e) {
-                    search(e);
-                });
+      <div class="result hidden">
+        <header class="header">
+          <div class="container">
+            <div class="row">
+              <div class="two-thirds column">
+                <form
+                  action=""
+                  autocomplete="off"
+                  class="result-wiki-search-form"
+                >
+                  <input
+                    autocomplete="false"
+                    type="text"
+                    style="display:none;"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search Wikipedia..."
+                    class="result-wiki-search-form-input"
+                    id="result-wiki-search-form-input"
+                  />
+                  <button class="btn result-btn-wiki">Search</button>
+                </form>
+              </div>
+              <div class="one-third column">
+                <h1>TU Darmstadt Search</h1>
+              </div>
+            </div>
+          </div>
+        </header>
 
-                document.getElementById('btn-search').addEventListener('click', function (e) {
-                    search(e);
-                })
-            },
-            false
+        <div class="container">
+          <section class="search-results">
+            <div class="one-half column">
+              <div class="display-results"></div>
+            </div>
+          </section>
+        </div>
+        <!-- Container -->
+      </div>
+      <!-- Results -->
+    </div>
+  </body>
+
+  <script>
+    window.onload = function() {
+      document.getElementById("wiki-search-input").focus();
+    };
+
+    var QA = [
+      {
+        keywords: [
+          "wie",
+          "pumpt",
+          "Herz",
+          "pumpen",
+          "Blut",
+          "funktioniert",
+          "Anatomie",
+          "Herzen",
+          "Blutgefäße"
+        ],
+        fullQuestion: "Wie pumpt das Herz Blut?",
+        relevantAnswers: [
+          {
+            title: "T1 Wie funktioniert das Herz? - gesundheitsinformation.de",
+            link:
+              "https://www.gesundheitsinformation.de/wie-funktioniert-das-herz.2095.de.html#:~:text=Das%20im%20K%C3%B6rper%20%E2%80%9Everbrauchte%E2%80%9C%20%E2%80%93,und%20nimmt%20frischen%20Sauerstoff%20auf.",
+            description:
+              "Das im Körper „verbrauchte“ – jetzt sauerstoffarme – Blut fließt zurück zum Herzen – genauer gesagt in den rechten Vorhof und von dort in die rechte Kammer....."
+          },
+          {
+            title: "T2 So funktioniert unser Herz | www.herzbewusst.de",
+            link:
+              "https://www.herzbewusst.de/angina-pectoris-herzinfarkt/so-funktioniert-unser-herz",
+            description:
+              "Lesen Sie hier wie das Herz aufgebaut ist und wie es funktioniert. Das menschliche Herz pumpt das sauerstoffarme Blut in die Lunge, wo es mit Sauerstoff..."
+          },
+          {
+            title: "T3 So arbeitet das Herz | Stiftung Gesundheitswissen",
+            link:
+              "https://www.stiftung-gesundheitswissen.de/gesundes-leben/koerper-wissen/so-arbeitet-das-herz",
+            description:
+              "Von dort aus pumpt es pro Minute etwa fünf Liter Blut durch den Körper, um den Organismus dauerhaft mit Sauerstoff und Nährstoffen zu versorgen – ein ganzes..."
+          },
+          {
+            title:
+              "T4 Anatomie des Herzens: Blutfluss, Herzschlag, Herzkranzgefäße",
+            link:
+              "https://www.hexal.de/patienten/ratgeber/herz-kreislauf/anatomie",
+            description:
+              "Erfahren Sie hier, wie das Herz aufgebaut ist und wie es funktioniert. Mit dem Schlagen unseres Herzens wird Blut in unseren Kreislauf gepumpt, wodurch unsere..."
+          },
+          {
+            title: "T5 Anatomie und Funktion des Herzens",
+            link:
+              "http://www.uniklinikum-saarland.de/de/einrichtungen/fachrichtungen/zellbiologie/seminar_zellbiologie_20192020/erbliche_herzkrankheiten/anatomie_und_funktion_des_herzens/",
+            description:
+              "Das Herz ist ein nach unten zeigendes, dreieckiger Herzmuskel. ... Es pumpt sauerstoffreiches Blut in den Körper..."
+          },
+          {
+            title:
+              "T6 Herz & Blutgefäße » Aufbau & Funktion des Blutkreislaufs",
+            link:
+              "https://www.internisten-im-netz.de/fachgebiete/herz-kreislauf/aufbau-funktion-des-blutkreislaufs/herz-blutgefaesse.html",
+            description:
+              "Der Blutkreislauf ist ein Netzwerk von Blutgefäßen. Durch die Blutgefäße pumpt das Herz stetig und regelmäßig Blut. Über dieses Versorgungs- und..."
+          },
+          {
+            title: "T7 So funktionieren Herz und Kreislauf - Apotheken.de",
+            link:
+              "https://www.apotheken.de/krankheiten/hintergrundwissen/4352-so-funktionieren-herz-und-kreislauf",
+            description:
+              "Venen führen das Blut wieder zum Herzen zurück. Es gibt ... Die linke Kammer pumpt das sauerstoffreiche Blut in die Aorta (Hauptschlagader)..."
+          },
+          {
+            title: "T8 Das Herz – BIOLOGIE",
+            link: "https://biologie.oncampus.de/loop/Das_Herz",
+            description:
+              "Wie pumpt das Herz Blut? Menschen hatten viele verschiedene Meinungen darüber, was das Herz macht. Vor mehr als..."
+          },
+          {
+            title: "T9 Der Herzzyklus wird vom Sinusknoten gesteuert...",
+            link:
+              "https://www.lernhelfer.de/schuelerlexikon/biologie-abitur/artikel/der-herzzyklus-wird-vom-sinusknoten-gesteuert#",
+            description:
+              "Im Herzzyklus wechseln Systole (Kontraktion) und Diastole. ... Der Sinusknoten als eigenes Erregungszentrums des Herzens steuert den ... Blut und Blutkreislauf ... "
+          },
+          {
+            title: "T10 Herz – Biologie",
+            link: "https://www.biologie-seite.de/Biologie/Herz",
+            description:
+              "Herz eines Hundes von links: 1 linke Herzkammer, 2 linke Längsfurche (Sulcus ... Die elektrische Gesamtaktivität...Sauerstoffreiches Blut aus der Lunge kommt im linken Vorhof an, das Blut des ..."
+          }
+        ],
+        irrelevantAnswers: [
+          {
+            title: "F1 Herz: Neuer Turbo für den Blut-Kreislauf",
+            link:
+              "https://www.handelsblatt.com/technik/medizin/herz-neuer-turbo-fuer-den-blut-kreislauf/3151436.html?ticket=ST-4067611-ffgM9GINerOQfMewQycC-ap6",
+            description:
+              "Der winzige Propeller pumpt das Blut durch die Gefäße und unterstützt das schwächelnde Herz. Die Idee für die neue Technik zur ..."
+          },
+          {
+            title:
+              "F2 Hirnforschung: Wie der Herzschlag unsere Wahrnehmung ...",
+            link: "https://www.mpg.de/wie-das-herz-die-wahrnehmung-beeinflusst",
+            description:
+              " Hirnforschung: Wie der Herzschlag unsere Wahrnehmung beeinflusst. Während unser Herz Blut durch den Körper pumpt, werden Hirnwellen ..."
+          },
+          {
+            title: "F3 Herzgesunder Sport: Wie man es richtig macht",
+            link:
+              "https://www.tagesspiegel.de/themen/herz-und-kreislauf/bewegung-aufpumpen/13581254.html",
+            description:
+              "Denn bei körperlicher Anstrengung schlägt das Herz häufiger und pumpt mehr Blut in den Körper und der Herzmuskel wird trainiert. Auch Herzkranke sollten..."
+          },
+          {
+            title: "F4 Wie das größte Herz der Welt schlägt",
+            link:
+              "https://www.wissenschaft.de/umwelt-natur/wie-das-groesste-herz-der-welt-schlaegt/",
+            description:
+              "Der Herzschlag ist für uns und alle höheren Tiere essenziell, um Blut und ... Herz – und dieses pumpt mit jedem Schlag rund 80 Liter Blut durch ..."
+          },
+          {
+            title: "F5 Blutfluss durch das HERZ",
+            link: "https://de.globometer.com/koerper.php",
+            description:
+              "Wie viele Liter Blut pumpt das Herz durch den Körper pro Sekunde, pro Tag, ... 5 Liter Blut pro Minute, das ist das gesamte Blutvolumen im menschlichen Körper..."
+          },
+          {
+            title: "F6 Erkrankungen der Herzklappen",
+            link:
+              "https://www.helios-gesundheit.de/kliniken/aue/unser-angebot/unsere-fachbereiche/kardiologie/herzklappenerkrankungen-und-angeborene-herzfehler/",
+            description:
+              "Unser Herz besitzt vier Herzklappen. Diese sorgen dafür, dass der Herzmuskel das Blut in die richtige Richtung pumpt. Gleichzeitig wird der Rückfluss des ..."
+          },
+          {
+            title: "F7 LWL | Das Blauwalherz",
+            link:
+              "https://www.lwl-naturkundemuseum-muenster.de/de/naturkundemuseum/ausstellungen/archiv-ausstellungen/wale-riesen-der-meere/das-blauwalherz/",
+            description:
+              "Blauwale besitzen ein riesiges Herz! Es ist ein großer Muskel, der das Blut durch den gewaltigen Körper pumpt... "
+          },
+          {
+            title: "F8 Wenn das eigene Herz versagt",
+            link:
+              "https://www.dw.com/de/wenn-das-eigene-herz-versagt/a-42181437e",
+            description:
+              "Das menschliche Herz hat zwei Herzkammern: Die rechte pumpt das sauerstoffarme Blut aus dem Kreislauf in die Lunge. Die linke Kammer ..."
+          },
+          {
+            title: "F9 Sars-CoV-2: Die Wege des Virus",
+            link:
+              "https://www.zeit.de/wissen/gesundheit/2020-05/sars-cov-2-coronavirus-verlauf-lungenkrankheit-herz-blut-rachen",
+            description:
+              "Das Coronavirus Sars-CoV-2 hat weltweit schon Hunderttausende getötet. Wie macht es das? Ein Blick in Rachen, Lunge, Blut und Herz..."
+          },
+          {
+            title: "F10 Lungenembolie",
+            link: "https://www.rotkreuzkliniken.de/lungenembolie.html",
+            description:
+              "...dem rechten Herzvorhof, in dem er sich aufgrund eines Vorhofflimmerns ... Das Herz pumpt ineffizient und die Lunge erhält nicht mehr ausreichend Blut..."
+          }
+        ]
+      },
+      {
+        keywords: [
+          "wie",
+          "bilden",
+          "Tornados",
+          "Tornado",
+          "enstehen",
+          "Gewitter"
+        ],
+        fullQuestion: "Wie bilden sich Tornados?",
+        relevantAnswers: [
+          {
+            title: "T1 Wie entsteht ein Tornado?",
+            link:
+              "https://www.daserste.de/information/reportage-dokumentation/unser-wetter/sendung/tornado-entstehen-100.html#:~:text=Tornados%20entstehen%2C%20wenn%20sich%20bodennahe,in%20der%20H%C3%B6he%20%C3%BCbereinander%20schichten.&text=Wenn%20dazu%20noch%20am%20Boden,die%20Entstehung%20eines%20Tornados%20gegeben.",
+            description:
+              "Tornados entstehen, wenn sich bodennahe sehr feuchtwarme Luft und trockenkalte Luft in der Höhe übereinander schichten... "
+          },
+          {
+            title: "T2 Tornado",
+            link: "https://de.wikipedia.org/wiki/Tornado",
+            description:
+              "Unter den entsprechenden Bedingungen können sich Tornados an jedem Ort während des ganzen Jahres bilden. Trotzdem gibt es sowohl räumliche als auch ..."
+          },
+          {
+            title: "T3 Wie entstehen Tornados - Der stärkste Sturm der Welt",
+            link:
+              "https://www.wetteronline.de/wetter-spezial/teil-1-wie-entstehen-tornados-der-staerkste-sturm-der-welt-2007-03-01-td?section=Tornado",
+            description:
+              'Tornados, die heftigsten Windsysteme der Erde, sind im Unterschied zu den bis zu 1000 Kilometer Durchmesser erreichenden "Hurrikans" oder auch "Taifunen", ...'
+          },
+          {
+            title: "T4 Wie entsteht ein Tornado - Sturmwetter.de",
+            link: "http://www.sturmwetter.de/texte/tornadoentstehung.htm",
+            description:
+              "Die oberen, trockenkalten Luftschichten in der Gewitterwolke haben eine weit höhere Zuggeschwindigkeit und auch eine andere Zugrichtung als die unteren, feuchtwarmen Luftschichten (Windscherung)..."
+          },
+          {
+            title: "T5 Wie bildet sich ein Tornado?",
+            link:
+              "https://www.kids-and-science.de/kinderfragen/detailansicht/datum/2009/11/10/wie-bildet-sich-ein-tornado.html",
+            description:
+              "Wir kennen sie nur von Bildern und Videos - Tornados erschrecken und faszinieren uns. Wie entstehen sie?"
+          },
+          {
+            title: "T6 Tornado: Entstehung eines Wirbelsturms",
+            link:
+              "https://www.t-online.de/leben/familie/id_58344590/tornado-entstehung-eines-wirbelsturms.html",
+            description:
+              " Meteorologen unterscheiden jedoch: Im Gegensatz zu Tornados, die sich üblicherweise über flachem Festland bilden, entstehen Hurrikans meist ..."
+          },
+          {
+            title: "T7 Wie entsteht ein Tornado? - WAS IST WAS",
+            link:
+              "https://www.wasistwas.de/archiv-wissenschaft-details/wie-entsteht-ein-tornado.html",
+            description:
+              "Der Tornado ist ein kleinräumiger, aber oft verheerender Wirbelsturm. Tornados kommen besonders im Landesinneren von Amerika, im weiten, flachen Land vor."
+          },
+          {
+            title: "T8 Wie ein Tornado entsteht - einfach erklärt",
+            link:
+              "https://praxistipps.focus.de/wie-ein-tornado-entsteht-einfach-erklaert_108219",
+            description:
+              "Wie viele Wetter-Phänomene entsteht auch ein Tornado durch das Zusammenspiel von Temperaturen und Wind. Auch wenn der Luftwirbel ..."
+          },
+          {
+            title: "T9 Tornados und Hurrikane: Rasante Drehungen der Luft",
+            link:
+              "https://www.wissen.de/bildwb/tornados-und-hurrikane-rasante-drehungen-der-luft",
+            description:
+              "Dagegen bilden sich Tornados, Wirbelstürme dort, wo über Land feuchte, warme Luft auf kühlere, trockene Luft trifft und dabei riesige Gewitterwolken bildet..."
+          },
+          {
+            title: "T10 Übersicht zu Tornados",
+            link:
+              "https://www.aktion-deutschland-hilft.de/de/fachthemen/natur-humanitaere-katastrophen/hurrikane-und-wirbelstuerme/tornados/",
+            description:
+              "Tornados sind schnell rotierende Luftwirbel, die von der Unterseite einer Wolke bis zum Erdboden reichen und am unteren Ende alles mitreißen..."
+          }
+        ],
+        irrelevantAnswers: [
+          {
+            title: "F1 War es ein Tornado?",
+            link:
+              "https://www.stuttgarter-nachrichten.de/inhalt.schweres-unwetter-ueber-nordrhein-westfalen-war-es-ein-tornado.15a75895-4429-4d38-9112-7bab8941aeaa.html",
+            description:
+              " Wie häufig sind Windhosen in Deutschland? Selbst bei optimalen Bedingungen sind Tornados hier zu Lande ein sehr seltenes Ereignis. Nur in ..."
+          },
+          {
+            title: "F2 Naturgewalten",
+            link:
+              "http://www.natur-lexikon.de/naturgewalt/sturmchronologie.htm",
+            description:
+              "Die schwersten Tornados bilden sich in den zentralen Teilen der USA, schwächere Formen treten im östlichen Australien auf. Ereignis, Jahr, Ort, Auswirkungen..."
+          },
+          {
+            title:
+              "F3 Tornado-Nachfolge: Fähigkeiten und Anpassungszeiträume...",
+            link: "https://www.swp-berlin.org/10.18449/2020A36/",
+            description:
+              "Der Prozess der Auswahl eines Nachfolgemodells für den Tornado der ... auch für die Fachunteroffiziere, die das Rückgrat der Luftfahrzeugtechnik bilden."
+          },
+          {
+            title:
+              "F4 Bundeswehr strebt Brückenlösung für Tornado-Nachfolge an",
+            link:
+              "https://www.bmvg.de/de/aktuelles/bundeswehr-brueckenloesung-tornado-nachfolge-kampfflugzeug-251444",
+            description:
+              "Der Eurofighter wird so absehbar das Rückgrat der Luftwaffe bilden. Wenige spezielle Fähigkeiten sollen interimsweise durch einen weiteren ..."
+          },
+          {
+            title: "F5 Statistische Gewitterhochburg Minden-Lübbecke...",
+            link:
+              "https://www.westfalen-blatt.de/OWL/Kreis-Minden-Luebbecke/Luebbecke/4245257-Statistische-Gewitterhochburg-Minden-Luebbecke-ist-eher-Tornado-Gebiet-Nur-zufaellig-die-meisten-Blitze",
+            description:
+              "Statistische Gewitterhochburg Minden-Lübbecke ist eher Tornado-Gebiet ... Tornados entstehen, wenn Schauer- oder Gewitterwolken mit Wind ..."
+          },
+          {
+            title: "F6 Was ist ein Hurrikan und wie entsteht er?",
+            link:
+              "https://www.wissenschaft-im-dialog.de/projekte/wieso/artikel/beitrag/was-ist-ein-hurrikan-und-wie-entsteht-er/",
+            description:
+              "Hurrikane entstehen immer über dem Meer. Damit sie sich bilden können, müssen eine Reihe von Faktoren zusammen kommen."
+          },
+          {
+            title: "F7 Ein Funke Unwissen bleibt: Wie entstehen Blitze?",
+            link:
+              "https://www.mdr.de/wissen/umwelt/wie-entstehen-blitze-100.html",
+            description:
+              "Es bilden sich unterschiedliche Ladungszentren in der Wolke. Die andere Theorie bezieht sich ... "
+          },
+          {
+            title: "F8 Tropische Wirbelstürme: Aufbau, Entstehung, Verbreitung",
+            link:
+              "https://bildungsserver.hamburg.de/wetterextreme-klimawandel/3062880/tropische-wirbelstuerme/",
+            description:
+              "Weltweit entstehen die meisten tropischen Wirbelstürme (ca.87%) zwischen 20oN und 20oS; zwei Drittel aller tropischen Wirbelstürme bilden sich auf der ..."
+          },
+          {
+            title: "F9 Wetter Deutschland: So war der Juni 2020",
+            link:
+              "https://www.op-online.de/wetter/wetter-deutschland-juni-2020-sturm-regen-gewitter-hitze-sonne-bilanz-offenbach-zr-13763698.html",
+            description:
+              "Sogar Tornados sind möglich. „Am Samstag können verbreitet Gewitter entstehen, die zum Teil heftig ausfallen können, teils mit Starkregen, ..."
+          },
+          {
+            title: "F10 Wetterphänomen in der Türkei",
+            link:
+              "https://www.n-tv.de/panorama/Tornado-wuetet-am-Flughafen-Antalya-article20830036.html",
+            description:
+              "Über der Küste entladen sich heftige Gewitter. Bei Antalya bilden sich Tornados. Eine Serie heftiger Unwetter hat an der türkische ..."
+          }
+        ]
+      },
+      {
+        keywords: ["Alter", "Fossilien", "ermitteln", "Wie", "Wissenschaftler"],
+        fullQuestion: "Wie ermitteln Wissenschaftler das Alter von Fossilien?",
+        relevantAnswers: [
+          {
+            title: "T1 Dinosaurier: Methoden der Altersbestimmung",
+            link:
+              "https://www.planet-wissen.de/geschichte/urzeit/dinosaurier/pwiemethodenderaltersbestimmung100.html",
+            description:
+              "Stratigraphie; Leitfossilien; Magnetfeld und radiometrische Altersbestimmung ... Auch das Erdmagnetfeld und der radioaktive Zerfall von Isotopen..."
+          },
+          {
+            title: "T2 Datierung von Fossilien: 66 Millionen Jahre? ",
+            link:
+              "https://www.tagesspiegel.de/wissen/datierung-von-fossilien-66-millionen-jahre-woher-wissen-die-das/12732570.html",
+            description:
+              "Um das Alter von Fossilien einzuschätzen, gibt es vier Methoden: – Die Stratigraphie. Sie ist die älteste Methode und besteht darin, ..."
+          },
+          {
+            title: "T3 Die Entdeckung des Erdalters",
+            link:
+              "https://www.nzz.ch/wissen/wissenschaft/die-entdeckung-des-erdalters-1.18155878",
+            description:
+              " Leitfossilien wie die Ammoniten dienen Geologen zur Datierung von ... Elements und seines Zerfallsprodukts, mit denen das Alter eines Gestein oder eines ..."
+          },
+          {
+            title: "T4 Altersbestimmung (Archäologie)",
+            link:
+              "https://de.wikipedia.org/wiki/Altersbestimmung_(Arch%C3%A4ologie)",
+            description:
+              "Bei der Altersbestimmung von archäologischen Funden gibt es verschiedene ... Hier werden die durch die beim radioaktiven Zerfall..."
+          },
+          {
+            title: "T5 Fossilien: Wie das Alter bestimmt wird",
+            link:
+              "https://spiegel.de/wissenschaft/natur/fossilien-wie-das-alter-bestimmt-wird-a-1053456.html",
+            description:
+              "Können Wissenschaftler wirklich sicher sein, dass Versteinerungen Millionen Jahre alt sind? ... Dabei lässt sich das Alter von Fossilien erstaunlich gut messen..."
+          },
+          {
+            title: "T6 Die steinerne Zeit",
+            link: "https://www.wissenschaft.de/allgemein/die-steinerne-zeit/",
+            description:
+              "Bevor die radioaktive Uhr entdeckt wurde, tappten Geowissenschaftler bei der Datierung im dunkeln. ... Leitfossilien zur Datierung zu nutzen, sammeln sie Informationen aus..."
+          },
+          {
+            title: "T7 Paläontologische Altersbestimmung",
+            link:
+              "https://www.steinkern.de/fuer-sammelanfaenger/326-palaeontologische-altersbestimmung.html",
+            description:
+              "Alle diese kleinen Schritte führen zu einer relativen Chronologie. Man kann damit sagen, Gestein A ist älter als B, weil es weiter unten liegt, aber damit bekommt man keine absoluten Altersangaben..."
+          },
+          {
+            title: "T8 Spuren der Hominiden und ihre Datierung",
+            link: "https://bio-abi-wissen.de/B/B3/Spuren.htm",
+            description:
+              "Anhand der Fossilien lässt sich dann eine Stammesgeschichte nachzeichnen, die die ... Die absolute Datierung versucht das tatsächliche Alter der Fossilien auf der Grundlage ... "
+          },
+          {
+            title: "T9 Geochronologie - Lexikon der Biologie",
+            link:
+              "https://www.spektrum.de/lexikon/biologie/geochronologie/27455",
+            description:
+              "... die sich unvermittelte Umpolungen des magnetischen Erdfeldes (Magnetfeld) ... führt als Zweig der Stratigraphie eine Zeit- und Alterbestimmung mit Fossilien ..."
+          },
+          {
+            title: "T10 Altersbestimmung - Kompaktlexikon der Biologie",
+            link:
+              "https://www.spektrum.de/lexikon/biologie-kompakt/altersbestimmung/466",
+            description:
+              "Leitfossilien sind nur für eine bestimmte Gesteins- bzw. Sedimentschicht charakteristisch, sodass deren Fehlen oder Anwesenheit es erlauben,..."
+          }
+        ],
+        irrelevantAnswers: [
+          {
+            title: "F1 Die Farbe 48 Millionen Jahre alter Säugetiere",
+            link:
+              "https://www.derstandard.at/story/2000023135837/forscher-bestimmen-die-farbe-48-millionen-jahre-alter-saeugetiere",
+            description:
+              " Forscher bestimmen die Farbe 48 Millionen Jahre alter Säugetiere ... Rabenstein glaubt, dass die Methode nun auch auf andere Fossilien ..."
+          },
+          {
+            title: "F2 Die Radiokarbonmethode ",
+            link:
+              "https://www.praehistorische-archaeologie.de/wissen/datierung/14-c/",
+            description:
+              "Dort kann man ihm anschließend das Alter der Knochen berechnen. ... bei der Altersbestimmung nicht berücksichtigt,..."
+          },
+          {
+            title: "F3 Altersbestimmungen mit Kohlenstoff",
+            link: "https://taz.de/Altersbestimmungen-mit-Kohlenstoff/!5218441/",
+            description:
+              "... die Altersbestimmung mit der Radiokarbonmethode (C14) unmöglich ... Hoffnung: Dafür entwickeln Wissenschaftler vergleichbare Methoden ..."
+          },
+          {
+            title: "F4 13 Millionen Jahre alter Affenschädel",
+            link: "https://www.mpg.de/11422564/nyanzapithecus-alesi",
+            description:
+              "Fossil aus dem Miozän. Jetzt können Forscher diese Fragen möglicherweise beantworten, denn das neu entdeckte Menschenaffenfossil, das von ..."
+          },
+          {
+            title: "F5 Knochenfresser-Wurm 30 Mio. Jahre alt",
+            link:
+              "https://www.uni-kiel.de/aktuell/pm/2010/2010-064-fossile-zombie-wuermer.shtml",
+            description:
+              'Vor sechs Jahren hatten Wissenschaftler des Scripps Institut für ... Sein Alter wurde anhand von so genannten Leitfossilien bestimmt. "Das Alter ...'
+          },
+          {
+            title: "F6 Forscher: Lebensmut und Freunde im Alter entscheidend",
+            link:
+              "https://www.wz.de/panorama/wissenschaft/forscher-lebensmut-und-freunde-im-alter-entscheidend_aid-26172481?page=2",
+            description:
+              "Zudem machten die Wissenschaftler einfache körperliche und ... Tatsächlich war das Alter eine der wenigen Gemeinsamkeiten der ..."
+          },
+          {
+            title: "F7 Ältester Homo sapiens Europas lebte ...",
+            link:
+              "https://seismoblog.de/2020/05/18/aeltester-homo-sapiens-europas-lebte-im-jungpalaeolithikum/",
+            description:
+              " Um das Alter dieser Fossilien und die Ablagerungen in der Bacho-Kiro-Höhle zu ermitteln, arbeitete das Team eng mit Lukas Wacker von der ..."
+          },
+          {
+            title: "F8 Bericht aus Südafrika",
+            link:
+              "https://www.stuttgarter-zeitung.de/inhalt.bericht-aus-suedafrika-eine-beerdigung-vor-jahrmillionen.46652bd2-d602-4c12-a5d7-1c27eadc38a0.html",
+            description:
+              "Gewöhnlich bestimmen Forscher das Alter von Fossilien nach Ablagerungen und anderen Funden in der Umgebung – beides gibt es in diesem ..."
+          },
+          {
+            title:
+              "F9 Eingreifen in den Alterungsprozess: Biologisches Alter...",
+            link:
+              "https://www.n-tv.de/wissen/Biologisches-Alter-unterscheidet-sich-frueh-article15452856.html",
+            description:
+              "Mithilfe verschiedener Marker wie etwa Nieren- und Lungenfunktion bestimmten US-Forscher das biologische Alter von rund 1000 38-jährigen ..."
+          },
+          {
+            title: "F10 Der Homo sapiens ist älter als gedacht",
+            link: "https://www.max-wissen.de/264862/news_publication_11322546",
+            description:
+              "Forscher entdecken in Marokko die bislang ältesten Fossilien unserer Art. 7. ... Darüber hinaus konnte das Team das Alter eines in den 1960er ..."
+          }
+        ]
+      }
+    ];
+
+    function ajax(keyword) {
+      var containKeyword = false;
+      for (var i = 0; i < QA.length; i++) {
+        containKeyword = QA[i].keywords.some(currentKeyword =>
+          keyword.toLowerCase().includes(currentKeyword.toLowerCase())
         );
+        if (containKeyword) {
+          var relevantAnswers = QA[i].relevantAnswers.sort(
+            () => Math.random() - 0.5
+          );
+          var irrelevantAnswers = QA[i].irrelevantAnswers.sort(
+            () => Math.random() - 0.5
+          );
 
-    </script>
+          showResults(relevantAnswers.concat(irrelevantAnswers));
+          break;
+        }
+      }
+      if (!containKeyword) {
+        showError(keyword);
+      }
+    }
 
+    function showResults(response) {
+      for (var i = 0; i < response.length; i++) {
+        $(".display-results").append(
+          "<div class='result-list result-" +
+            i +
+            "'>" +
+            "<span class='result-title title-" +
+            i +
+            "'></span>" +
+            "<br>" +
+            "<span class='result-snippet snippet-" +
+            i +
+            "'></span>" +
+            "<br>" +
+            "<span class='result-metadata metadata-" +
+            i +
+            "'></span>" +
+            "</div>"
+        );
+      }
+
+      for (var m = 0; m < response.length; m++) {
+        var title = response[m].title;
+
+        $(".title-" + m).html(
+          "<a href='" +
+            response[m].link +
+            "' target='_blank'>" +
+            response[m].title +
+            "</a>"
+        );
+        $(".snippet-" + m).html(response[m].description);
+        $(".metadata-" + m).html(
+          "<a href='" +
+            response[m].link +
+            "' target='_blank'>" +
+            response[m].link +
+            "</a>"
+        );
+      }
+    }
+
+    function showError(keyword) {
+      $(".display-results").append(
+        "<div class='error'> <p>Your search <span class='keyword'>" +
+          keyword +
+          "</span> did not match any documents.</p> <p>Suggestions:</p><li>Make sure that all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></div> "
+      );
+    }
+
+    $(".result-btn-wiki").click(function(event) {
+      event.preventDefault();
+      $(".display-results").html("");
+      var keyword = $(".result-wiki-search-form-input").val();
+      document.getElementById("result-wiki-search-form-input").blur();
+      ajax(keyword);
+    });
+
+    $(".btn-wiki").click(function(event) {
+      event.preventDefault();
+      var keyword = $(".wiki-search-input").val();
+
+      if (keyword !== "") {
+        $(".result-wiki-search-form-input").val(keyword);
+        $(".home").addClass("hidden");
+        $(".result").removeClass("hidden");
+        document.getElementById("wiki-search-input").blur();
+        $(".wiki-search-input").val("");
+        document.getElementById("result-wiki-search-form-input").blur();
+        $(".display-results").html("");
+        ajax(keyword);
+      } else {
+        alert("Enter a keyword into the search box");
+      }
+    });
+  </script>
 </html>
